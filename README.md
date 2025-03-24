@@ -15,6 +15,7 @@ Bot yang kami buat memiliki strategy greedy yang berbeda, yaitu:
     Strategi greedy yang digunakan pada TikusKantor (bot 3) adalah memaksimalkan poin yang didapatkan dari survival time. TikusKantor akan bergerak ke titik yang paling aman dan menembakkan peluru apabila ada kesempatan menyerang. Solusi optimum lokal pada bot ini adalah titik yang paling aman. Alasan memilih algoritma ini adalah bot yang akan diuji pada waktu pengujian terbilang banyak. Oleh karena itu, dengan memilih algoritma ini bot akan bertahan hidup dengan waktu yang lebih lama.
 
 4. Bot 4 (RusdiJoging)
+   Strategi greedy yang digunakan Rusdi (bot 4) adalah memaksimalkan poin yang didapatkan dari ramming. Rusdi akan berkeliling di sekitar arena dengan harapan menghindari tembakan bot musuh. Kemudian tiap 200 turn, rusdi akan mengaktifkan mode hunting, lalu mengejar bot yang terkena radarnya.
 
 # Requirement
 - Download terlebih dahulu game engine robocode, link donwload dapat dilihat di bawah
