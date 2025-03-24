@@ -22,29 +22,38 @@ public class TikusKantor : Bot
     static Point2D myPos;
     static double myEnergy;
 
+    int cntTick = 0;
+
+    bool almostHitWall = false;
+
     public override void Run()
     {
 
         AdjustGunForBodyTurn = true;
         AdjustRadarForGunTurn = true;
 
-        SetTurnRadarRight(360);
-
         nextDestination = lastPosition = myPos = new Point2D(X, Y);
         target = new Enemy();
-        
-        // Inisialisasi posisi awal
+
         lastPosition = new Point2D(X, Y);
+        SetTurnRadarRight(Double.PositiveInfinity);
+        
         
         while (IsRunning)
         {
+            cntTick++;
+
             myPos = new Point2D(X, Y);
             myEnergy = Energy;
-            
-            // Console.WriteLine("Jumlah musuh: " + enemies.Count);
-            // Console.WriteLine("J musuh: " + target.live);
-            
-            if(target.live){
+        
+
+            if (!(inArea(myPos))){
+                Stop();
+                almostHitWall = true;
+            }
+
+            if(((target.live && DistanceRemaining == 0) || !almostHitWall) && cntTick > 10){
+
                 moveAndGun();
             }
 
@@ -54,18 +63,11 @@ public class TikusKantor : Bot
     }
     
     public void moveAndGun(){
+        
+
         double distanceToTarget = myPos.Distance(target.pos);
     
-
-        if (GunTurnRemaining == 0 && myEnergy > 1){
-            Fire(1);
-        }
-
-        double gunHeadingRadians = GunDirection * (Math.PI / 180);
-
-        SetTurnGunRight(NormalizeRelativeAngle(CalcAngle(target.pos, myPos)) - GunDirection);
-        WaitFor(new TurnCompleteCondition(this));
-
+        
         double distanceToNextDestination = myPos.Distance(nextDestination);
 
         if(distanceToNextDestination < 15) 
@@ -80,18 +82,17 @@ public class TikusKantor : Bot
             {
                 testPoint = CalcPoint(myPos,Math.Min(distanceToTarget*0.8, 100 + 200 * new Random().NextDouble()),2*Math.PI*new Random().NextDouble());
 
-                if (testPoint.X > 30 && testPoint.Y > 30 && testPoint.X < ArenaWidth - 60 && testPoint.Y < ArenaHeight - 60 
+                if (inArea(testPoint)
                 && evaluate(testPoint,addLast) < evaluate(nextDestination, addLast))
                 {
                     nextDestination = testPoint;
                 }
 
             }while(i++ < 200);
-            Console.WriteLine("k");
 
         }else
         {
-            double angle = CalcAngle(nextDestination, myPos) - GunDirection;
+            double angle = CalcAngle(nextDestination, myPos) - Direction;
             double direction = 1;
 
             if(Math.Cos(angle * (Math.PI/180) ) < 0)
@@ -100,21 +101,15 @@ public class TikusKantor : Bot
                 direction = -1;
             }
             
-            
             angle = NormalizeRelativeAngle(angle);
 
+            SetTurnRight(angle);
             SetForward(distanceToNextDestination * direction);
             WaitFor(new TurnCompleteCondition(this));
-            SetTurnRight(angle);
-            WaitFor(new TurnCompleteCondition(this));
-            
-            
 
         }
 
-
     }
-
 
     public double evaluate(Point2D p, double addLast)
     {
@@ -132,10 +127,21 @@ public class TikusKantor : Bot
 
     }
 
-
     public override void OnScannedBot(ScannedBotEvent e)
     {
+
+        if (DistanceRemaining <= 5){
+
+            double power = DistanceTo(e.X, e.Y) <= 100 ? 3 : 1;    
+            SetTurnGunLeft(NormalizeRelativeAngle(GunBearingTo(e.X,e.Y)));
+            WaitFor(new TurnCompleteCondition(this));
+            Fire(power);
+            Go();
+  
+        }
+
         Enemy en = (Enemy)enemies[e.ScannedBotId];
+
 
         if (en == null)
         {
@@ -147,7 +153,7 @@ public class TikusKantor : Bot
         en.live = true;
         Point2D enPos = new Point2D(e.X,e.Y);
 
-        en.pos = CalcPoint(myPos, enPos.Distance(myPos), GunDirection + BearingTo(e.X,e.Y));
+        en.pos = CalcPoint(myPos, enPos.Distance(myPos), Direction + BearingTo(e.X,e.Y));
 
         if(!target.live || DistanceTo(e.X,e.Y) < myPos.Distance(target.pos)) {
 			target = en;
@@ -164,11 +170,6 @@ public class TikusKantor : Bot
         ((Enemy)enemies[e.VictimId]).live = false;
     }
 
-    private double GetDistanceTo(Point2D target)
-    {
-        return Math.Sqrt(Math.Pow(target.X - X, 2) + Math.Pow(target.Y - Y, 2));
-    }
-
     private double CalcAngle(Point2D target,Point2D myPos)
     {
         return Math.Atan2(target.Y - myPos.Y,target.X - myPos.X) * (180.0 / Math.PI);
@@ -178,6 +179,11 @@ public class TikusKantor : Bot
     private static Point2D CalcPoint(Point2D p, double dist, double ang)
     {
         return new Point2D(p.X + dist * Math.Sin(ang), p.Y + dist * Math.Cos(ang));
+    }
+
+    private bool inArea(Point2D point){
+
+        return (point.X > 30 && point.Y > 30 && point.X < ArenaWidth - 60 && point.Y < ArenaHeight - 60);
     }
 }
 
