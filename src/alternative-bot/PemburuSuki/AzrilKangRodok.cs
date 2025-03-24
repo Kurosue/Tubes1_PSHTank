@@ -3,7 +3,7 @@ using System.Drawing;
 using Robocode.TankRoyale.BotApi;
 using Robocode.TankRoyale.BotApi.Events;
 
-public class PemburuSuki : Bot
+public class AzrilKangRodok : Bot
 {   
     double radius, deathTime, switchTime, move;
     bool isMoveForward;
@@ -11,10 +11,10 @@ public class PemburuSuki : Bot
     /* A bot that will find you, chase you, and backshot you till you cant stand on your legs */
     static void Main(string[] args)
     {
-        new PemburuSuki().Start();
+        new AzrilKangRodok().Start();
     }
 
-    PemburuSuki() : base(BotInfo.FromFile("PemburuSuki.json")) { }
+    AzrilKangRodok() : base(BotInfo.FromFile("AzrilKangRodok.json")) { }
 
     public override void Run()
     {

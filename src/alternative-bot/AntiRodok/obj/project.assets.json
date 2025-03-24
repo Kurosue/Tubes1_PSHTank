@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {
+    "net8.0": {
       "Microsoft.Build.Locator/1.7.8": {
         "type": "package",
         "compile": {
@@ -249,10 +249,10 @@
           "System.Drawing.Common": "8.0.10"
         },
         "compile": {
-          "lib/net9.0/SVG.dll": {}
+          "lib/net8.0/SVG.dll": {}
         },
         "runtime": {
-          "lib/net9.0/SVG.dll": {}
+          "lib/net8.0/SVG.dll": {}
         }
       },
       "System.Drawing.Common/8.0.10": {
@@ -812,7 +812,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net9.0": [
+    "net8.0": [
       "Microsoft.Extensions.Configuration.Binder >= 8.0.2",
       "Robocode.TankRoyale.BotApi >= 0.30.0"
     ]
@@ -823,24 +823,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repository\\Tubes_1_stima\\PemburuSuki\\PemburuSuki.csproj",
-      "projectName": "PemburuSuki",
-      "projectPath": "D:\\Repository\\Tubes_1_stima\\PemburuSuki\\PemburuSuki.csproj",
+      "projectUniqueName": "D:\\Repository\\Tubes1_PSHTank\\src\\alternative-bot\\AntiRodok\\AntiRodok.csproj",
+      "projectName": "AntiRodok",
+      "projectPath": "D:\\Repository\\Tubes1_PSHTank\\src\\alternative-bot\\AntiRodok\\AntiRodok.csproj",
       "packagesPath": "C:\\Users\\62878\\.nuget\\packages\\",
-      "outputPath": "D:\\Repository\\Tubes_1_stima\\PemburuSuki\\obj\\",
+      "outputPath": "D:\\Repository\\Tubes1_PSHTank\\src\\alternative-bot\\AntiRodok\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\62878\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net9.0"
+        "net8.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -857,8 +857,8 @@
       "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
-      "net9.0": {
-        "targetAlias": "net9.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": {
             "target": "Package",
@@ -880,6 +880,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.14, 8.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

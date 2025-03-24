@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6hngZGM8dsM=",
+  "dgSpecHash": "2msd9p4gjxY=",
   "success": true,
-  "projectFilePath": "D:\\Repository\\Tubes_1_stima\\PemburuSuki\\PemburuSuki.csproj",
+  "projectFilePath": "D:\\Repository\\Tubes1_PSHTank\\src\\alternative-bot\\AntiRodok\\AntiRodok.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\62878\\.nuget\\packages\\microsoft.build.locator\\1.7.8\\microsoft.build.locator.1.7.8.nupkg.sha512",
     "C:\\Users\\62878\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
@@ -19,7 +19,11 @@
     "C:\\Users\\62878\\.nuget\\packages\\robocode.tankroyale.botapi\\0.30.0\\robocode.tankroyale.botapi.0.30.0.nupkg.sha512",
     "C:\\Users\\62878\\.nuget\\packages\\svgnet\\3.5.0\\svgnet.3.5.0.nupkg.sha512",
     "C:\\Users\\62878\\.nuget\\packages\\system.drawing.common\\8.0.10\\system.drawing.common.8.0.10.nupkg.sha512",
-    "C:\\Users\\62878\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512"
+    "C:\\Users\\62878\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512",
+    "C:\\Users\\62878\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\62878\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\62878\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\62878\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
   ],
   "logs": []
 }
