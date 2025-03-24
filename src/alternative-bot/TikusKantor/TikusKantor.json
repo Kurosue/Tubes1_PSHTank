@@ -1,0 +1,10 @@
+{
+  "name": "Tikus Kantor",
+  "version": "2.0",
+  "authors": ["Bama"],
+  "description": "A bot that drives forward and backward, and fires a ",
+  "homepage": "",
+  "countryCodes": ["id"],
+  "platform": ".Net 8.0",
+  "programmingLang": "C# 10.0"
+}
