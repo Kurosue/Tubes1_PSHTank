@@ -20,10 +20,14 @@ Bot yang kami buat memiliki strategy greedy yang berbeda, yaitu:
 
 # Requirement
 - Download terlebih dahulu game engine robocode, link donwload dapat dilihat di bawah
+  ```bash
   https://github.com/Ariel-HS/tubes1-if2211-starter-pack
+  ```
 
 - Download dotnet. Pastikan dotnet yang digunakan memiliki versi 8 ke atas. Berikut link download
+  ```bash
   https://dotnet.microsoft.com/id-id/download
+  ```
 
 
 
