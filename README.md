@@ -30,12 +30,14 @@ Bot yang kami buat memiliki strategy greedy yang berbeda, yaitu:
   ```
 
 # Compile and Build
-Berikut cara build program menggunakan windows:
+Berikut cara build program menggunakan windows, linux dan macOS:
 1. Pindah ke folder bot yang sudah kamu buat
    ```bash
    cd yourFolder
    ```
 2. Di dalam direktori, buatlah file.cmd berikut
+
+   Khusus Windows
    ```cmd
    @echo off
    REM TemplateBot.cmd - Run the bot in development or release mode
@@ -61,10 +63,39 @@ Berikut cara build program menggunakan windows:
        echo Error: Invalid MODE value. Use "dev" or "release".
    )
    ```
-
    
+   Khusus Linux dan MacOS
+   ```sh
+      #!/bin/sh
+   # This script runs the bot in development mode by default.
+   # Development Mode (default): Always cleans, rebuilds, and runs.
+   # Release Mode (commented out): Runs without rebuilding.
+   
+   # Development mode: always rebuild
+   rm -rf bin obj
+   dotnet build
+   dotnet run --no-build
+   
+   # Uncomment below for release mode (runs without rebuilding)
+   # if [ -d "bin" ]; then
+   #   dotnet run --no-build
+   # else
+   #   dotnet build
+   #   dotnet run --no-build
+   # fi
+   ```
+   
+4. Jalankan file.cmd
 
+   Khusus Windows
+   ```bash
+   ./file.cmd
+   ```
 
+   Khusus linux dan MacOS
+   ```bash
+   ./file.sh
+   ```
 # Anggota
 - Muhammad Aditya Rahmadeni / 13523028
 - Aryo Bama Wiratama / 13523088
