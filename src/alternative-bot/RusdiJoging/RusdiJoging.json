@@ -1,0 +1,14 @@
+{
+  "name": "RusdiJoging",
+  "version": "1.0",
+  "authors": [
+    "yayat"
+  ],
+  "description": "unemployed bot that only moves around",
+  "homepage": "",
+  "countryCodes": [
+    "id"
+  ],
+  "platform": ".Net 9.0",
+  "programmingLang": "C# 10.0"
+}
