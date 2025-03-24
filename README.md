@@ -10,7 +10,7 @@ Bot yang kami buat memiliki strategy greedy yang berbeda, yaitu:
 
 
 3. Bot 2 (AntiRodok)
-
+   Strategi greedy yang digunakan pada TikusKantor (bot 3) adalah memaksimalkan poin yang didapatkan dari menargetkan musuh dengan energy terendah untuk mendapakan  poin yang maksimal. AntiRodok akan memilih satu target dengan nyawa yang kurang dari 20 dan menghancurkannya dengan damage yang besar.
 
 4. Bot 3 (TikusKantor) <br>
     Strategi greedy yang digunakan pada TikusKantor (bot 3) adalah memaksimalkan poin yang didapatkan dari survival time. TikusKantor akan bergerak ke titik yang paling aman dan menembakkan peluru apabila ada kesempatan menyerang. Solusi optimum lokal pada bot ini adalah titik yang paling aman. Alasan memilih algoritma ini adalah bot yang akan diuji pada waktu pengujian terbilang banyak. Oleh karena itu, dengan memilih algoritma ini bot akan bertahan hidup dengan waktu yang lebih lama.
