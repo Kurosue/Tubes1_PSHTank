@@ -100,3 +100,6 @@ Berikut cara build program menggunakan windows, linux dan macOS:
 - Muhammad Aditya Rahmadeni / 13523028
 - Aryo Bama Wiratama / 13523088
 - Fiqyatul Haq Rosyidi / 13523116
+
+# Language
+![C#](https://img.shields.io/badge/C%23-9A4993?style=for-the-badge&logo=csharp&logoColor=white)
