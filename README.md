@@ -33,8 +33,8 @@ Bot yang kami buat memiliki strategy greedy yang berbeda, yaitu:
 Berikut cara build program menggunakan windows:
 1. Pindah ke folder bot yang sudah kamu buat
    ```bash
-  cd yourFolder
-  ```
+   cd yourFolder
+   ```
 2. Di dalam direktori, buatlah file.cmd berikut
    ```cmd
    @echo off
